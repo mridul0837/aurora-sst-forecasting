@@ -1,0 +1,69 @@
+2025-11-28 16:05:50.114705: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2025-11-28 16:05:50.128706: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:467] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1764374750.140985   65854 cuda_dnn.cc:8579] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+E0000 00:00:1764374750.145028   65854 cuda_blas.cc:1407] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+W0000 00:00:1764374750.157634   65854 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1764374750.157672   65854 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1764374750.157684   65854 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1764374750.157694   65854 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+2025-11-28 16:05:50.161567: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX512F AVX512_VNNI AVX512_BF16 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2025-11-28 16:05:53.621935: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2025-11-28 16:05:53.635317: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:467] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1764374753.647606   65858 cuda_dnn.cc:8579] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+E0000 00:00:1764374753.651532   65858 cuda_blas.cc:1407] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+W0000 00:00:1764374753.665663   65858 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1764374753.665703   65858 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1764374753.665715   65858 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1764374753.665725   65858 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+2025-11-28 16:05:53.669544: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX512F AVX512_VNNI AVX512_BF16 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+TensorBoard 2.19.0 at http://0.0.0.0:6006/ (Press CTRL+C to quit)
+/home/mridul01/envs/py311/lib/python3.11/site-packages/timm/models/layers/__init__.py:48: FutureWarning: Importing from timm.models.layers is deprecated, please import via timm.layers
+  warnings.warn(f"Importing from {__name__} is deprecated, please import via timm.layers", FutureWarning)
+E1128 17:47:53.930300 22645114398400 _internal.py:97] 172.25.118.23 - - [28/Nov/2025 17:47:53] code 400, message Bad request version ('2¨0\x0e9\x07Ä5MZy½\x05\x16`\x153I+vOS50')
+E1128 17:47:54.030152 22645112297152 _internal.py:97] 172.25.118.23 - - [28/Nov/2025 17:47:54] code 400, message Bad request version ('84¹Õ\x19\x98\x00Y\x8d\x8b\x9a)\xad\\Q\x08\x13\x97¶÷¸ÉY\x1bÐx1}ÇÃ+©ªß¡Ä5\x01\x9e\x01\x05½\x16¹,ùð¹ö\x92\x98Vû3Üs«êv¡±Ø¾\x05\x1bª')
+E1128 17:47:54.360995 22645112297152 _internal.py:97] 172.25.118.23 - - [28/Nov/2025 17:47:54] code 400, message Bad request version ('ZZ\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x06¥')
+E1128 17:47:54.461085 22645114398400 _internal.py:97] 172.25.118.23 - - [28/Nov/2025 17:47:54] code 400, message Bad request version ('F=Ç')
+E1128 17:48:20.072085 22645114398400 _internal.py:97] 172.25.118.23 - - [28/Nov/2025 17:48:20] code 400, message Bad request version ('\x93òS#\x90¹©hH<c¤x{WK\x00')
+E1128 17:48:20.173749 22645112297152 _internal.py:97] 172.25.118.23 - - [28/Nov/2025 17:48:20] code 400, message Bad request version ('**\x00\x00\x00\x05\x00\x05\x01\x00\x00\x00\x00\x003\x04ï\x04íúú\x00\x01\x00\x11ì\x04À\\\x92EÝ\x13\x007$]ï°¾Ñò\x9f}D²%\x86<áü|ªèaèÌ')
+E1128 17:48:20.509622 22645112297152 _internal.py:97] 172.25.118.23 - - [28/Nov/2025 17:48:20] code 400, message Bad request version ('localhostDÍ\x00\x05\x00\x03\x02h2\x00#\x00\x00\x00+\x00\x07\x06::\x03\x04\x03\x03\x00\x17\x00\x00\x00')
+E1128 17:48:20.612233 22645114398400 _internal.py:97] 172.25.118.23 - - [28/Nov/2025 17:48:20] code 400, message Bad request version ("â'\x10")
+E1128 17:49:04.942289 22645114398400 _internal.py:97] 172.25.118.23 - - [28/Nov/2025 17:49:04] code 400, message Bad request version ('localhost\x00#\x00\x00\x00-\x00\x02\x01\x01\x00\x17\x00\x00\x00\x12\x00\x00\x00+\x00\x07\x06')
+E1128 17:49:05.046345 22645112297152 _internal.py:97] 172.25.118.23 - - [28/Nov/2025 17:49:05] code 400, message Bad request syntax ('\x16\x03\x01\x07\x12\x01\x00\x07\x0e\x03\x03')
+E1128 17:49:05.365609 22645112297152 _internal.py:97] 172.25.118.23 - - [28/Nov/2025 17:49:05] code 400, message Bad HTTP/0.9 request type ('\x16\x03\x01\x06ò\x01\x00\x06î\x03\x03ö\x06ðÄèiD6jë³\x9e¼Ìõü\\DÌö£*hç*ê§½«,ö\x10')
+E1128 17:49:05.471657 22645114398400 _internal.py:97] 172.25.118.23 - - [28/Nov/2025 17:49:05] code 400, message Bad request version ('\x94')
+E1128 17:52:34.019429 22645114398400 _internal.py:97] 172.25.118.25 - - [28/Nov/2025 17:52:34] code 400, message Bad request version ('JJ\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x06')
+E1128 17:52:34.147292 22645112297152 _internal.py:97] 172.25.118.25 - - [28/Nov/2025 17:52:34] code 400, message Bad request version ('ªª\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x06¥')
+E1128 17:52:34.542526 22645112297152 _internal.py:97] 172.25.118.25 - - [28/Nov/2025 17:52:34] code 400, message Bad request version ('ø\x1bÚ²%u\x1b\x86¼Á')
+E1128 17:52:34.672566 22645114398400 _internal.py:97] 172.25.118.25 - - [28/Nov/2025 17:52:34] code 400, message Bad request version ('\x10\x00')
+E1128 17:53:01.060347 22645114398400 _internal.py:97] 172.25.118.25 - - [28/Nov/2025 17:53:01] code 400, message Bad request version ('Ç\x01Z¬\x93;»\x07ãà')
+E1128 17:53:01.197047 22645112297152 _internal.py:97] 172.25.118.25 - - [28/Nov/2025 17:53:01] code 400, message Bad request version ('ªØ\\ñ:+')
+E1128 17:53:01.590486 22645112297152 _internal.py:97] 172.25.118.25 - - [28/Nov/2025 17:53:01] code 400, message Bad request version ('\x00\x12\x00\x10\x04\x03\x08\x04\x04\x01\x05\x03\x08\x05\x05\x01\x08\x06\x06\x01\x00')
+E1128 17:53:01.719518 22645114398400 _internal.py:97] 172.25.118.25 - - [28/Nov/2025 17:53:01] code 400, message Bad request version ('ZZ\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x06¥')
+E1128 17:53:39.866202 22645114398400 _internal.py:97] 172.25.118.25 - - [28/Nov/2025 17:53:39] code 400, message Bad request version ('\x00\x12\x00\x10\x04\x03\x08\x04\x04\x01\x05\x03\x08\x05\x05\x01\x08\x06\x06\x01ÿ\x01\x00\x01\x00\x00\x1b\x00\x03\x02\x00\x02\x00')
+E1128 17:53:40.000648 22645112297152 _internal.py:97] 172.25.118.25 - - [28/Nov/2025 17:53:40] code 400, message Bad request version ('\x02h2\x08http/1.1\x00-\x00\x02\x01\x01\x00')
+E1128 17:53:40.369525 22645112297152 _internal.py:97] 172.25.118.25 - - [28/Nov/2025 17:53:40] code 400, message Bad request version ('é²8\x00¾J6\x00')
+E1128 17:53:40.503489 22645114398400 _internal.py:97] 172.25.118.25 - - [28/Nov/2025 17:53:40] code 400, message Bad request version ('jj\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x06e')
+E1128 17:55:11.067430 22645114398400 _internal.py:97] 172.25.118.25 - - [28/Nov/2025 17:55:11] code 400, message Bad HTTP/0.9 request type ('\x16\x03\x01\x06²\x01\x00\x06®\x03\x03')
+E1128 17:55:11.209669 22645112297152 _internal.py:97] 172.25.118.25 - - [28/Nov/2025 17:55:11] code 400, message Bad request version ('ú\x02\x1aÓöRo\x07ÜosÀ\x93@\x930ý&\x93nóÉ²É\x05øsE\x00\x90\x91j\x97c¥O¯Ø\x14\x98ýq\x02\x01>(0òçY¨^9¿¼ñ!\x04:\x96Ê')
+E1128 17:55:11.730301 22645112297152 _internal.py:97] 172.25.118.25 - - [28/Nov/2025 17:55:11] code 400, message Bad request version ('\x95R\x04j-t1î°p\x92Õc¿d7\x9fj!æ\x1bL-k\x1a±øw\x9e\x83¸\x91±\x9er\x8c´¯uS\x90ú\x93\x8dH\x9a,Ã\x97\x1a:ÃTfL\x1a"1úTÄäw\x01þ«Z\x08³¿CP¶yÜ¢T\x8b®Ê\x03,&ë')
+E1128 17:55:11.985478 22645114398400 _internal.py:97] 172.25.118.25 - - [28/Nov/2025 17:55:11] code 400, message Bad request version ("i\x9fF6Æ\x83Póª¦âã'lÜvq")
+E1128 17:55:14.827595 22645114398400 _internal.py:97] 172.25.118.25 - - [28/Nov/2025 17:55:14] code 400, message Bad request version ('**\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x06E')
+E1128 17:55:14.962543 22645112297152 _internal.py:97] 172.25.118.25 - - [28/Nov/2025 17:55:14] code 400, message Bad request version ('zz\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x06eÚÚ\x00\x00\x00#\x00\x00\x00\x12\x00\x00\x003\x04ï\x04í')
+E1128 17:55:15.369856 22645112297152 _internal.py:97] 172.25.118.25 - - [28/Nov/2025 17:55:15] code 400, message Bad request version ('\x91*ÂW\x87ª©Ñ(j\x14*c\x93Wª\x86¨I\x07às@´\x8eÂõ^\x87Z\x87ôK¾pìy**')
+E1128 17:55:15.517625 22645114398400 _internal.py:97] 172.25.118.25 - - [28/Nov/2025 17:55:15] code 400, message Bad request syntax ('\x16\x03\x01\x07\x12\x01\x00\x07\x0e\x03\x03c\x9ahÕÑ')
+E1128 17:56:05.212158 22645114398400 _internal.py:97] 172.25.118.25 - - [28/Nov/2025 17:56:05] code 400, message Bad request version ('\x02h2\x08http/1.1\x00\x1b\x00\x03\x02\x00\x02\x00\x17\x00\x00ÿ\x01\x00\x01\x00\x00\x05\x00\x05\x01\x00\x00\x00\x00\x00-\x00\x02\x01\x01\x00')
+E1128 17:56:05.339763 22645112297152 _internal.py:97] 172.25.118.25 - - [28/Nov/2025 17:56:05] code 400, message Bad request version ('í´¿°T\x9e+Y\x00\x90Ç8=ü\x82}ýºQÎ¹úBä÷»¤¶\x89¡7!ÂØIIþé¼Þ\x9d)')
+E1128 17:56:05.782402 22645112297152 _internal.py:97] 172.25.118.25 - - [28/Nov/2025 17:56:05] code 400, message Bad request version ('êê\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x06E')
+E1128 17:56:05.909574 22645114398400 _internal.py:97] 172.25.118.25 - - [28/Nov/2025 17:56:05] code 400, message Bad request version ('úú\x00\x00\x00')
+W1130 12:29:01.627660 22645116499648 plugin_event_multiplexer.py:267] Deleting accumulator '.'
+Traceback (most recent call last):
+  File "/home/mridul01/projects/MLP Decoder/Finetuning-SST/finetune_auroraLite_sst.py", line 136, in <module>
+  File "/home/mridul01/envs/py311/lib/python3.11/site-packages/xarray/backends/api.py", line 587, in open_dataset
+  File "/home/mridul01/envs/py311/lib/python3.11/site-packages/xarray/backends/plugins.py", line 154, in guess_engine
+  File "/home/mridul01/envs/py311/lib/python3.11/site-packages/xarray/backends/netCDF4_.py", line 725, in guess_can_open
+  File "/home/mridul01/envs/py311/lib/python3.11/site-packages/xarray/core/utils.py", line 784, in try_read_magic_number_from_path
+PermissionError: [Errno 13] Permission denied: '/scratch/mridul01/data/finetune-data-2020-2024/era5_surface_2020_09.nc'

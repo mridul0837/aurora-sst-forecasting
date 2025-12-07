@@ -1,0 +1,12 @@
+--------------------------------------------------------------------------
+WARNING: Open MPI failed to open the /dev/knem device due to a local
+error. Please check with your system administrator to get the problem
+fixed, or set the smsc MCA variable to "^knem" to silence this warning
+and run without knem support.
+
+Open MPI will try to fall back on another single-copy mechanism if one
+is available.  This may result in lower performance.
+
+  Local host: fc10515
+  Errno:      2 (No such file or directory)
+--------------------------------------------------------------------------

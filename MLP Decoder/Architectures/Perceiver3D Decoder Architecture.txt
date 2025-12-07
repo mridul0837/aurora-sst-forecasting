@@ -1,0 +1,46 @@
+(decoder): Perceiver3DDecoderLite(
+    (level_decoder): PerceiverResampler(
+      (layers): ModuleList(
+        (0): ModuleList(
+          (0): PerceiverAttention(
+            (to_q): Linear(in_features=1024, out_features=1024, bias=False)
+            (to_kv): Linear(in_features=1024, out_features=2048, bias=False)
+            (to_out): Linear(in_features=1024, out_features=1024, bias=False)
+          )
+          (1): MLP(
+            (net): Sequential(
+              (0): Linear(in_features=1024, out_features=2048, bias=True)
+              (1): GELU(approximate='none')
+              (2): Linear(in_features=2048, out_features=1024, bias=True)
+              (3): Dropout(p=0.0, inplace=False)
+            )
+          )
+          (2-3): 2 x LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+        )
+      )
+    )
+    (surf_heads): ParameterDict(
+        (10u): Object of type: Linear
+        (10v): Object of type: Linear
+        (2t): Object of type: Linear
+        (msl): Object of type: Linear
+      (10u): Linear(in_features=1024, out_features=16, bias=True)
+      (10v): Linear(in_features=1024, out_features=16, bias=True)
+      (2t): Linear(in_features=1024, out_features=16, bias=True)
+      (msl): Linear(in_features=1024, out_features=16, bias=True)
+    )
+    (atmos_heads): ParameterDict(
+        (q): Object of type: Linear
+        (t): Object of type: Linear
+        (u): Object of type: Linear
+        (v): Object of type: Linear
+        (z): Object of type: Linear
+      (q): Linear(in_features=1024, out_features=16, bias=True)
+      (t): Linear(in_features=1024, out_features=16, bias=True)
+      (u): Linear(in_features=1024, out_features=16, bias=True)
+      (v): Linear(in_features=1024, out_features=16, bias=True)
+      (z): Linear(in_features=1024, out_features=16, bias=True)
+    )
+    (atmos_levels_embed): Linear(in_features=1024, out_features=1024, bias=True)
+  )
+)

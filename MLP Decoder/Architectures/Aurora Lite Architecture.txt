@@ -1,0 +1,287 @@
+AuroraLite(
+  (encoder): Perceiver3DEncoder(
+    (surf_mlp): MLP(
+      (net): Sequential(
+        (0): Linear(in_features=512, out_features=2048, bias=True)
+        (1): GELU(approximate='none')
+        (2): Linear(in_features=2048, out_features=512, bias=True)
+        (3): Dropout(p=0.0, inplace=False)
+      )
+    )
+    (surf_norm): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+    (pos_embed): Linear(in_features=512, out_features=512, bias=True)
+    (scale_embed): Linear(in_features=512, out_features=512, bias=True)
+    (lead_time_embed): Linear(in_features=512, out_features=512, bias=True)
+    (absolute_time_embed): Linear(in_features=512, out_features=512, bias=True)
+    (atmos_levels_embed): Linear(in_features=512, out_features=512, bias=True)
+    (surf_token_embeds): LevelPatchEmbed(
+      (weights): ParameterDict(
+          (10u): Parameter containing: [torch.cuda.FloatTensor of size 512x1x2x4x4 (cuda:0)]
+          (10v): Parameter containing: [torch.cuda.FloatTensor of size 512x1x2x4x4 (cuda:0)]
+          (2t): Parameter containing: [torch.cuda.FloatTensor of size 512x1x2x4x4 (cuda:0)]
+          (lsm): Parameter containing: [torch.cuda.FloatTensor of size 512x1x2x4x4 (cuda:0)]
+          (msl): Parameter containing: [torch.cuda.FloatTensor of size 512x1x2x4x4 (cuda:0)]
+          (slt): Parameter containing: [torch.cuda.FloatTensor of size 512x1x2x4x4 (cuda:0)]
+          (z): Parameter containing: [torch.cuda.FloatTensor of size 512x1x2x4x4 (cuda:0)]
+      )
+      (norm): Identity()
+    )
+    (atmos_token_embeds): LevelPatchEmbed(
+      (weights): ParameterDict(
+          (q): Parameter containing: [torch.cuda.FloatTensor of size 512x1x2x4x4 (cuda:0)]
+          (t): Parameter containing: [torch.cuda.FloatTensor of size 512x1x2x4x4 (cuda:0)]
+          (u): Parameter containing: [torch.cuda.FloatTensor of size 512x1x2x4x4 (cuda:0)]
+          (v): Parameter containing: [torch.cuda.FloatTensor of size 512x1x2x4x4 (cuda:0)]
+          (z): Parameter containing: [torch.cuda.FloatTensor of size 512x1x2x4x4 (cuda:0)]
+      )
+      (norm): Identity()
+    )
+    (level_agg): PerceiverResampler(
+      (layers): ModuleList(
+        (0): ModuleList(
+          (0): PerceiverAttention(
+            (to_q): Linear(in_features=512, out_features=512, bias=False)
+            (to_kv): Linear(in_features=512, out_features=1024, bias=False)
+            (to_out): Linear(in_features=512, out_features=512, bias=False)
+          )
+          (1): MLP(
+            (net): Sequential(
+              (0): Linear(in_features=512, out_features=2048, bias=True)
+              (1): GELU(approximate='none')
+              (2): Linear(in_features=2048, out_features=512, bias=True)
+              (3): Dropout(p=0.0, inplace=False)
+            )
+          )
+          (2-3): 2 x LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+        )
+      )
+    )
+    (pos_drop): Dropout(p=0.0, inplace=False)
+  )
+  (backbone): Swin3DTransformerBackbone(
+    (time_mlp): Sequential(
+      (0): Linear(in_features=512, out_features=512, bias=True)
+      (1): SiLU()
+      (2): Linear(in_features=512, out_features=512, bias=True)
+    )
+    (encoder_layers): ModuleList(
+      (0): Basic3DEncoderLayer(
+        (blocks): ModuleList(
+          (0-5): 6 x Swin3DTransformerBlock(
+            (norm1): AdaptiveLayerNorm(
+              (ln): LayerNorm((512,), eps=1e-05, elementwise_affine=False)
+              (ln_modulation): Sequential(
+                (0): SiLU()
+                (1): Linear(in_features=512, out_features=1024, bias=True)
+              )
+            )
+            (attn): WindowAttention(
+              dim=512, window_size=(2, 6, 12), num_heads=8
+              (qkv): Linear(in_features=512, out_features=1536, bias=True)
+              (proj): Linear(in_features=512, out_features=512, bias=True)
+              (proj_drop): Dropout(p=0.0, inplace=False)
+            )
+            (drop_path): Identity()
+            (norm2): AdaptiveLayerNorm(
+              (ln): LayerNorm((512,), eps=1e-05, elementwise_affine=False)
+              (ln_modulation): Sequential(
+                (0): SiLU()
+                (1): Linear(in_features=512, out_features=1024, bias=True)
+              )
+            )
+            (mlp): MLP(
+              (fc1): Linear(in_features=512, out_features=2048, bias=True)
+              (act): GELU(approximate='none')
+              (fc2): Linear(in_features=2048, out_features=512, bias=True)
+              (drop): Dropout(p=0.0, inplace=False)
+            )
+          )
+        )
+        (downsample): PatchMerging3D(
+          (reduction): Linear(in_features=2048, out_features=1024, bias=False)
+          (norm): LayerNorm((2048,), eps=1e-05, elementwise_affine=True)
+        )
+      )
+      (1): Basic3DEncoderLayer(
+        (blocks): ModuleList(
+          (0-9): 10 x Swin3DTransformerBlock(
+            (norm1): AdaptiveLayerNorm(
+              (ln): LayerNorm((1024,), eps=1e-05, elementwise_affine=False)
+              (ln_modulation): Sequential(
+                (0): SiLU()
+                (1): Linear(in_features=512, out_features=2048, bias=True)
+              )
+            )
+            (attn): WindowAttention(
+              dim=1024, window_size=(2, 6, 12), num_heads=16
+              (qkv): Linear(in_features=1024, out_features=3072, bias=True)
+              (proj): Linear(in_features=1024, out_features=1024, bias=True)
+              (proj_drop): Dropout(p=0.0, inplace=False)
+            )
+            (drop_path): Identity()
+            (norm2): AdaptiveLayerNorm(
+              (ln): LayerNorm((1024,), eps=1e-05, elementwise_affine=False)
+              (ln_modulation): Sequential(
+                (0): SiLU()
+                (1): Linear(in_features=512, out_features=2048, bias=True)
+              )
+            )
+            (mlp): MLP(
+              (fc1): Linear(in_features=1024, out_features=4096, bias=True)
+              (act): GELU(approximate='none')
+              (fc2): Linear(in_features=4096, out_features=1024, bias=True)
+              (drop): Dropout(p=0.0, inplace=False)
+            )
+          )
+        )
+        (downsample): PatchMerging3D(
+          (reduction): Linear(in_features=4096, out_features=2048, bias=False)
+          (norm): LayerNorm((4096,), eps=1e-05, elementwise_affine=True)
+        )
+      )
+      (2): Basic3DEncoderLayer(
+        (blocks): ModuleList(
+          (0-7): 8 x Swin3DTransformerBlock(
+            (norm1): AdaptiveLayerNorm(
+              (ln): LayerNorm((2048,), eps=1e-05, elementwise_affine=False)
+              (ln_modulation): Sequential(
+                (0): SiLU()
+                (1): Linear(in_features=512, out_features=4096, bias=True)
+              )
+            )
+            (attn): WindowAttention(
+              dim=2048, window_size=(2, 6, 12), num_heads=32
+              (qkv): Linear(in_features=2048, out_features=6144, bias=True)
+              (proj): Linear(in_features=2048, out_features=2048, bias=True)
+              (proj_drop): Dropout(p=0.0, inplace=False)
+            )
+            (drop_path): Identity()
+            (norm2): AdaptiveLayerNorm(
+              (ln): LayerNorm((2048,), eps=1e-05, elementwise_affine=False)
+              (ln_modulation): Sequential(
+                (0): SiLU()
+                (1): Linear(in_features=512, out_features=4096, bias=True)
+              )
+            )
+            (mlp): MLP(
+              (fc1): Linear(in_features=2048, out_features=8192, bias=True)
+              (act): GELU(approximate='none')
+              (fc2): Linear(in_features=8192, out_features=2048, bias=True)
+              (drop): Dropout(p=0.0, inplace=False)
+            )
+          )
+        )
+      )
+    )
+    (decoder_layers): ModuleList(
+      (0): Basic3DDecoderLayer(
+        (blocks): ModuleList(
+          (0-7): 8 x Swin3DTransformerBlock(
+            (norm1): AdaptiveLayerNorm(
+              (ln): LayerNorm((2048,), eps=1e-05, elementwise_affine=False)
+              (ln_modulation): Sequential(
+                (0): SiLU()
+                (1): Linear(in_features=512, out_features=4096, bias=True)
+              )
+            )
+            (attn): WindowAttention(
+              dim=2048, window_size=(2, 6, 12), num_heads=32
+              (qkv): Linear(in_features=2048, out_features=6144, bias=True)
+              (proj): Linear(in_features=2048, out_features=2048, bias=True)
+              (proj_drop): Dropout(p=0.0, inplace=False)
+            )
+            (drop_path): Identity()
+            (norm2): AdaptiveLayerNorm(
+              (ln): LayerNorm((2048,), eps=1e-05, elementwise_affine=False)
+              (ln_modulation): Sequential(
+                (0): SiLU()
+                (1): Linear(in_features=512, out_features=4096, bias=True)
+              )
+            )
+            (mlp): MLP(
+              (fc1): Linear(in_features=2048, out_features=8192, bias=True)
+              (act): GELU(approximate='none')
+              (fc2): Linear(in_features=8192, out_features=2048, bias=True)
+              (drop): Dropout(p=0.0, inplace=False)
+            )
+          )
+        )
+        (upsample): PatchSplitting3D(
+          (lin1): Linear(in_features=2048, out_features=4096, bias=False)
+          (lin2): Linear(in_features=1024, out_features=1024, bias=False)
+          (norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+        )
+      )
+      (1): Basic3DDecoderLayer(
+        (blocks): ModuleList(
+          (0-9): 10 x Swin3DTransformerBlock(
+            (norm1): AdaptiveLayerNorm(
+              (ln): LayerNorm((1024,), eps=1e-05, elementwise_affine=False)
+              (ln_modulation): Sequential(
+                (0): SiLU()
+                (1): Linear(in_features=512, out_features=2048, bias=True)
+              )
+            )
+            (attn): WindowAttention(
+              dim=1024, window_size=(2, 6, 12), num_heads=16
+              (qkv): Linear(in_features=1024, out_features=3072, bias=True)
+              (proj): Linear(in_features=1024, out_features=1024, bias=True)
+              (proj_drop): Dropout(p=0.0, inplace=False)
+            )
+            (drop_path): Identity()
+            (norm2): AdaptiveLayerNorm(
+              (ln): LayerNorm((1024,), eps=1e-05, elementwise_affine=False)
+              (ln_modulation): Sequential(
+                (0): SiLU()
+                (1): Linear(in_features=512, out_features=2048, bias=True)
+              )
+            )
+            (mlp): MLP(
+              (fc1): Linear(in_features=1024, out_features=4096, bias=True)
+              (act): GELU(approximate='none')
+              (fc2): Linear(in_features=4096, out_features=1024, bias=True)
+              (drop): Dropout(p=0.0, inplace=False)
+            )
+          )
+        )
+        (upsample): PatchSplitting3D(
+          (lin1): Linear(in_features=1024, out_features=2048, bias=False)
+          (lin2): Linear(in_features=512, out_features=512, bias=False)
+          (norm): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+        )
+      )
+      (2): Basic3DDecoderLayer(
+        (blocks): ModuleList(
+          (0-5): 6 x Swin3DTransformerBlock(
+            (norm1): AdaptiveLayerNorm(
+              (ln): LayerNorm((512,), eps=1e-05, elementwise_affine=False)
+              (ln_modulation): Sequential(
+                (0): SiLU()
+                (1): Linear(in_features=512, out_features=1024, bias=True)
+              )
+            )
+            (attn): WindowAttention(
+              dim=512, window_size=(2, 6, 12), num_heads=8
+              (qkv): Linear(in_features=512, out_features=1536, bias=True)
+              (proj): Linear(in_features=512, out_features=512, bias=True)
+              (proj_drop): Dropout(p=0.0, inplace=False)
+            )
+            (drop_path): Identity()
+            (norm2): AdaptiveLayerNorm(
+              (ln): LayerNorm((512,), eps=1e-05, elementwise_affine=False)
+              (ln_modulation): Sequential(
+                (0): SiLU()
+                (1): Linear(in_features=512, out_features=1024, bias=True)
+              )
+            )
+            (mlp): MLP(
+              (fc1): Linear(in_features=512, out_features=2048, bias=True)
+              (act): GELU(approximate='none')
+              (fc2): Linear(in_features=2048, out_features=512, bias=True)
+              (drop): Dropout(p=0.0, inplace=False)
+            )
+          )
+        )
+      )
+    )
+  )

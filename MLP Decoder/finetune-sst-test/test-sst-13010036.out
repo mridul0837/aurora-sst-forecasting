@@ -1,0 +1,43 @@
+Hello World
+Fri Nov 28 08:14:50 2025       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 580.65.06              Driver Version: 580.65.06      CUDA Version: 13.0     |
++-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA H100 80GB HBM3          On  |   00000000:0C:00.0 Off |                    0 |
+| N/A   22C    P0             65W /  700W |       0MiB /  81559MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+TensorBoard started
+Node name: fc10406
+TensorBoard URL: http://fc10406:6006
+To access TensorBoard, run this on your local machine:
+ssh -N -L 6006:fc10406:6006 mridul01@<cluster>.computecanada.ca
+Then open http://localhost:6006 in your browser
+Warning: Missing validation files for 2022-09
+Warning: Missing validation files for 2022-10
+Warning: Missing validation files for 2022-11
+Warning: Missing validation files for 2022-12
+Training files: 24 months
+Validation files: 8 months
+
+Starting training with gradient accumulation...
+Accumulation steps: 22
+History window: 2
+Epoch 1/10 | Train Loss: 10.4413 | Val Loss: 10.1220 | Val RMSE: 11.0183 | Val R²: 0.0993
+  → New best model saved! (val_loss: 10.1220)
+
+Training complete! Best validation loss: 10.1220
+Checkpoints saved to: /scratch/mridul01/checkpoints/sst_finetune_test
+Job finished on Fri Nov 28 09:58:02 PST 2025
